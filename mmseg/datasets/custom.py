@@ -70,7 +70,9 @@ class CustomDataset(Dataset):
             load gt for evaluation, load from disk by default. Default: None.
     """
 
-    CLASSES = None
+#    CLASSES = None
+
+    CLASSES = ('background', 'skin', 'nose', 'eye_g', 'l_eye', 'r_eye', 'l_brow', 'r_brow', 'l_ear', 'r_ear', 'mouth', 'u_lip', 'l_lip', 'hair', 'hat', 'ear_r', 'neck_l', 'neck', 'cloth')
 
     PALETTE = None
 
