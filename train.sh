@@ -1,6 +1,8 @@
 #PYTHONPATH=. python  tools/train.py celeba_mask.py
 
-#CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. python -m torch.distributed.launch --nproc_per_node=4 --master_port=28500 tools/train.py celeba_mask_swin_22k.py --launcher pytorch >train_swin_22k.log 2>&1 &
-#CUDA_VISIBLE_DEVICES=2,3 PYTHONPATH=. python -m torch.distributed.launch --nproc_per_node=2 --master_port=38500 tools/train.py celeba_mask_swin_large_22k.py --launcher pytorch >train_swin_large_22k.log 2>&1 &
-#CUDA_VISIBLE_DEVICES=0,1 PYTHONPATH=. python -m torch.distributed.launch --nproc_per_node=2 --master_port=28500 tools/train.py celeba_mask_segformer.py --launcher pytorch >train_segformer.log 2>&1 &
-CUDA_VISIBLE_DEVICES=2,3 PYTHONPATH=. python -m torch.distributed.launch --nproc_per_node=2 --master_port=29500 tools/train.py celeba_mask_ocr.py --launcher pytorch >train_ocr.log 2>&1 &
+model="celeba_mask_ocr"
+model="celeba_mask_swin_22k"
+model="celeba_mask_large_swin_22k"
+model="celeba_mask_segformer"
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 PYTHONPATH=. python -m torch.distributed.launch --nproc_per_node=4 --master_port=28500 tools/train.py ${model}.py --launcher pytorch >train_${model}.log 2>&1 &
