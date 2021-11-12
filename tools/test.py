@@ -133,6 +133,8 @@ def main():
 
     # build the model and load checkpoint
     cfg.model.train_cfg = None
+    print(f'Config:\n{cfg.pretty_text}')
+
     model = build_segmentor(cfg.model, test_cfg=cfg.get('test_cfg'))
     fp16_cfg = cfg.get('fp16', None)
     if fp16_cfg is not None:

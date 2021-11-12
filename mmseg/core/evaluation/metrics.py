@@ -74,9 +74,8 @@ def intersect_and_union(pred_label,
 
     mask = (label != ignore_index)
 
-    if pred_label.shape != mask.shape:
-#        pred_label = F.interpolate(pred_label.unsqueeze(0).unsqueeze(0).byte(), mask.shape).squeeze(0).squeeze(0)
-         pred_label = F.interpolate(pred_label.unsqueeze(0).unsqueeze(0).float(), mask.shape,mode='bilinear', align_corners=True).squeeze(0).squeeze(0).byte()
+#    if pred_label.shape != mask.shape:
+#         pred_label = F.interpolate(pred_label.unsqueeze(0).unsqueeze(0).float(), mask.shape,mode='bilinear', align_corners=True).squeeze(0).squeeze(0).byte()
 
     pred_label = pred_label[mask]
     label = label[mask]
