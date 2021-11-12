@@ -1,7 +1,7 @@
 _base_ = [
 #    'configs/_base_/models/ocrnet_r50-d8.py', 
-    'configs/_base_/models/ocrnet_hr18.py', 
-    'configs/_base_/default_runtime.py'
+    '../_base_/models/ocrnet_hr18.py', 
+    '../_base_/default_runtime.py'
 ]
 
 #model = dict(pretrained='open-mmlab://resnet101_v1c', backbone=dict(depth=101))

@@ -1,6 +1,6 @@
 _base_ = [
-    'configs/_base_/models/upernet_swin.py', 
-    'configs/_base_/default_runtime.py'
+    '../_base_/models/upernet_swin.py', 
+    '../_base_/default_runtime.py'
 ]
 
 model = dict(

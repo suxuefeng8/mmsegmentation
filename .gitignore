@@ -116,3 +116,5 @@ mmseg/.mim
 
 # Pytorch
 *.pth
+
+visualize/

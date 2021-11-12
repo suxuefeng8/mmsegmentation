@@ -5,6 +5,7 @@ import mmcv
 import numpy as np
 import torch
 
+from torch.nn import functional as F
 
 def f_score(precision, recall, beta=1):
     """calculate the f-score value.
@@ -72,6 +73,11 @@ def intersect_and_union(pred_label,
         label[label == 254] = 255
 
     mask = (label != ignore_index)
+
+    if pred_label.shape != mask.shape:
+#        pred_label = F.interpolate(pred_label.unsqueeze(0).unsqueeze(0).byte(), mask.shape).squeeze(0).squeeze(0)
+         pred_label = F.interpolate(pred_label.unsqueeze(0).unsqueeze(0).float(), mask.shape,mode='bilinear', align_corners=True).squeeze(0).squeeze(0).byte()
+
     pred_label = pred_label[mask]
     label = label[mask]
 

@@ -1,6 +1,6 @@
 _base_ = [
-    'configs/_base_/models/segformer_mit-b0.py', 
-    'configs/_base_/default_runtime.py'
+    '../_base_/models/segformer_mit-b0.py', 
+    '../_base_/default_runtime.py'
 ]
 
 model = dict(
