@@ -13,7 +13,8 @@ model = dict(
 
 # dataset settings
 dataset_type = 'CustomDataset'
-classes = ('background', 'skin', 'nose', 'eye_g', 'l_eye', 'r_eye', 'l_brow', 'r_brow', 'l_ear', 'r_ear', 'mouth', 'u_lip', 'l_lip', 'hair', 'hat', 'ear_r', 'neck_l', 'neck', 'cloth')
+#classes = ('background', 'skin', 'nose', 'eye_g', 'l_eye', 'r_eye', 'l_brow', 'r_brow', 'l_ear', 'r_ear', 'mouth', 'u_lip', 'l_lip', 'hair', 'hat', 'ear_r', 'neck_l', 'neck', 'cloth')
+classes = ('background', 'skin', 'nose', 'eye_g', 'eye', 'brow', 'ear', 'mouth', 'lip', 'hair', 'hat', 'neck', 'cloth')
 
 data_root = '/search/odin/sxf/mmsegmentation/data/celeba_mask/'
 img_norm_cfg = dict(
@@ -27,8 +28,8 @@ train_pipeline = [
     dict(type='LoadAnnotations'),
 #    dict(type='Resize', img_scale=img_scale, keep_ratio=True),
 #    dict(type='RandomCrop', crop_size=crop_size, cat_max_ratio=0.75),
-    dict(type='RandomFlip', prob=0),
-#    dict(type='PhotoMetricDistortion'),
+    dict(type='RandomFlip', prob=0.5),
+    dict(type='PhotoMetricDistortion'),
     dict(type='Normalize', **img_norm_cfg),
 #    dict(type='Pad', size=crop_size, pad_val=0, seg_pad_val=255),
     dict(type='DefaultFormatBundle'),

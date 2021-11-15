@@ -72,7 +72,8 @@ class CustomDataset(Dataset):
 
 #    CLASSES = None
 
-    CLASSES = ('background', 'skin', 'nose', 'eye_g', 'l_eye', 'r_eye', 'l_brow', 'r_brow', 'l_ear', 'r_ear', 'mouth', 'u_lip', 'l_lip', 'hair', 'hat', 'ear_r', 'neck_l', 'neck', 'cloth')
+    #CLASSES = ('background', 'skin', 'nose', 'eye_g', 'l_eye', 'r_eye', 'l_brow', 'r_brow', 'l_ear', 'r_ear', 'mouth', 'u_lip', 'l_lip', 'hair', 'hat', 'ear_r', 'neck_l', 'neck', 'cloth')
+    CLASSES = ('background', 'skin', 'nose', 'eye_g', 'eye', 'brow', 'ear', 'mouth', 'lip', 'hair', 'hat', 'neck', 'cloth')
 
     PALETTE = None
 
