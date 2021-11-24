@@ -71,11 +71,16 @@ class CustomDataset(Dataset):
     """
 
 #    CLASSES = None
+#    PALETTE = None
 
     #CLASSES = ('background', 'skin', 'nose', 'eye_g', 'l_eye', 'r_eye', 'l_brow', 'r_brow', 'l_ear', 'r_ear', 'mouth', 'u_lip', 'l_lip', 'hair', 'hat', 'ear_r', 'neck_l', 'neck', 'cloth')
-    CLASSES = ('background', 'skin', 'nose', 'eye_g', 'eye', 'brow', 'ear', 'mouth', 'lip', 'hair', 'hat', 'neck', 'cloth')
+#    PALETTE = [[128, 64, 128], [244, 35, 232], [70, 70, 70], [102, 102, 156], [190, 153, 153], [153, 153, 153], [250, 170, 30], [220, 220, 0], [107, 142, 35], [152, 251, 152], [70, 130, 180], [220, 20, 60], [255, 0, 0], [0, 0, 142], [0, 0, 70], [0, 60, 100], [0, 80, 100], [0, 0, 230], [119, 11, 32]]
 
-    PALETTE = None
+    CLASSES = ('background', 'skin', 'nose', 'eye_g', 'eye', 'brow', 'ear', 'mouth', 'lip', 'hair', 'hat', 'neck', 'cloth')
+    PALETTE = [[128, 64, 128], [0, 0, 232], [70, 70, 70], [102, 102, 156],
+               [255, 0, 153], [153, 70, 153], [250, 170, 30], [220, 220, 0],
+               [255, 142, 35], [152, 251, 152], [70, 130, 180], [220, 20, 60],
+               [255, 0, 0]]
 
     def __init__(self,
                  pipeline,
